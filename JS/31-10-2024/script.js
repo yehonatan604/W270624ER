@@ -98,3 +98,32 @@ console.log(square2 * square1);
 console.log(square2 + square1);
 console.log(square2 - square1);
 console.log(square2 * square1);
+
+
+// ****************** boolean conditions *******************
+
+const n1 = 5;
+const n2 = 10;
+
+function addNumbers2(x, y) {
+    const sum3 = x + y;
+    return sum3;
+}
+
+function subNumbers(x, y) {
+    const sub = x - y;
+    return sub;
+}
+
+n2 > n1 && console.log(subNumbers(n1, n2));
+n2 < n1 && console.log(addNumbers2(n1, n2));
+
+// ****************** precents *******************
+
+const num4 = 100;
+const tenPrecentFromNum4 = num4 * 0.1;
+
+console.log(tenPrecentFromNum4 + num4);
+
+const num5 = 100 * 1.0;
+console.log(num5);
