@@ -52,6 +52,8 @@ const pricePerDay = 100;
 const priceOfBreakfast = 30;
 let total = days * pricePerDay;
 
+let roomType;
+
 console.log(uName + " you will stay for " + days + " days and the total price is " + total + "$");
 
 const breakfast = prompt("Do you want to have breakfast for " + days + " days? (yes/no)");
@@ -66,4 +68,12 @@ if (breakfast === "yes") {
 console.log(uName + " you will stay for " + days + " days and the total price is " + total + "$");
 
 
+// const bool = confirm("Do you want to continue?");
+// if (bool === true) {
+//     console.log("Thank you for your reservation");
+// } else {
+//     console.log("You canceled your reservation");
+// }
 
+
+//roomType = prompt("Please choose your room type: 1. single room 2. double room 3. family room");
