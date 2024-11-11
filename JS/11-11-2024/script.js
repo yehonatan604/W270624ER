@@ -14,10 +14,4 @@ fruites[5] = "Pineapple";
 console.log(fruites);
 
 console.log(fruites[fruites.length - 1]);
-console.log(fruites[fruites[0]]);
-
-
-
-
-
-
+console.log(fruites[0]);
