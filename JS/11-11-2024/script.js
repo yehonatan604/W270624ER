@@ -15,3 +15,24 @@ console.log(fruites);
 
 console.log(fruites[fruites.length - 1]);
 console.log(fruites[0]);
+
+//fruites.push(prompt("Enter a fruit name: ")); // 
+
+console.log("************************pop*************************");
+
+console.log(fruites);
+
+const poped = fruites.pop();
+console.log("poped: ", poped);
+
+console.log(fruites);
+
+console.log("*********************unshift****************************");
+fruites.unshift("Kiwi");
+
+console.log(fruites);
+
+console.log("***********************shift**************************");
+const shifed = fruites.shift();
+console.log("shifed: ", shifed);
+console.log(fruites);
