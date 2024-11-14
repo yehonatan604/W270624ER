@@ -65,3 +65,22 @@ console.log(bmwArray);
 const newText = bmwArray.join("-");
 console.log(newText);
 
+console.log("\n\n***********************exercise**************************\n\n");
+
+/* 
+    1. צרו מערך של 5 שמות שחקני קולנוע באנגלית
+    2. הגדילו את האות הראשונה של כל אחד משמות השחקנים
+    3. הדפיסו את השמות החדשים
+
+    * use split and join methods
+    * use for loop (for-of, for-in or standard for loop)
+
+    // הגדלת אות ראשונה
+
+    // const name = "john"
+    // const nameArray = name.split("");
+    // nameArray[0] = nameArray[0].toUpperCase();
+    // const newName = nameArray.join("");
+*/
+
+
