@@ -83,4 +83,26 @@ console.log("\n\n***********************exercise**************************\n\n")
     // const newName = nameArray.join("");
 */
 
+console.log("\n\n***********************filter**************************\n\n");
 
+const numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const numbersWithout5 = numbers2.filter(function (item, i) {
+//     console.log("i: " + i + ", item: " + item);
+//     return item !== 5;
+// });
+
+const oddNumbers = numbers2.filter(function (item) {
+    return item % 2 !== 0;
+});
+
+console.log(oddNumbers);
+
+console.log("\n\n***********************exercise 2**************************\n\n");
+
+/*
+    1. צרו מערך של 10 מספרים    
+    2. צרו מערך חדש של המספרים הזוגיים בלבד מתוך המערך הראשוני
+    3. הכפילו כל מספר במערך החדש ב-100
+    4. הדפיסו את המערך החדש
+*/
