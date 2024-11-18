@@ -106,3 +106,16 @@ console.log("\n\n***********************exercise 2**************************\n\n
     3. הכפילו כל מספר במערך החדש ב-100
     4. הדפיסו את המערך החדש
 */
+
+const grades = [100, 93, 80, 71, 65, 50, 40, 39, 20, 10];
+
+const evenGrades = grades.filter(function (grade) {
+    return grade % 2 === 0;
+});
+
+for (let grade of evenGrades) {
+    const newGrade = grade * 100;
+    evenGrades[grade] = newGrade;
+}
+
+console.log(evenGrades);
