@@ -61,6 +61,13 @@ const uppercasedArray = (arr) => {
 
 const movies = ["titanic", "avatar", "inception", "interstellar"];
 console.log(uppercasedArray(movies));
-console.log(movies);
+//console.log(uppercasedArray(["ofir"])[0]);
 
 
+console.log("************");
+
+const firstAndLastMovie = movies.filter((item, i) => {
+    return i === 0 || i === movies.length - 1;
+});
+
+console.log(firstAndLastMovie.length);
