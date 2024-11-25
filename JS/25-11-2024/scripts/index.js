@@ -18,3 +18,13 @@ console.log(title.innerHTML);
 title.innerHTML = "Hola Mundo";
 
 console.log("******************* exercise 1 *******************");
+
+const title1 = "1st paragraph";
+
+document.write("<h1>" + title1 + "</h1>");
+
+const paragraph1 = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ac libero"
+
+document.write("<p>" + paragraph1 + "</p>");
+
+
