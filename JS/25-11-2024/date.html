@@ -4,7 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./scripts/date.js"></script>
+    <style>
+      .clock {
+        border: 1px solid black;
+        border-radius: 12px;
+        box-shadow: 3px 6px 12px 12px silver;
+        width: 200px;
+        text-align: center;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="clock">
+      <h1 id="time"></h1>
+    </div>
+    <h1 id="bTime"></h1>
+    <script src="./scripts/date.js"></script>
+  </body>
 </html>
