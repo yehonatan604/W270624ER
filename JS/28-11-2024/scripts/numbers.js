@@ -50,5 +50,10 @@ console.log(`${rndNum1} ${operator} ${rndNum2} = ${result}`);
 
 console.log(+2.92342342234.toFixed(2) + 1); // 2.92
 
+const onClick = () => {
+    const input = document.getElementById("input");
+    console.log(input.value);
+}
+
 
 
