@@ -14,13 +14,13 @@ const car = {
         console.log("Car stopped");
     },
 
-    changeYear: function (year) {
-        this.year = year;
+    changeYear: (year) => {
+        car.year = year;
     },
 
     changeModel: function (model) {
-        console.log(this);
         this.model = model;
+        console.log(this);
     }
 };
 
@@ -29,7 +29,6 @@ console.log(car);
 
 console.log("model:", car.model);
 console.log("model:", car['model']);
-
 console.log("number-of-wheels:", car["number-of-wheels"]);
 
 console.log("********************** Object Methods ***************************");
@@ -69,3 +68,38 @@ console.log(Object.values(car));
 for (let props of Object.values(car)) {
     console.log(props);
 }
+
+console.log("********************** Object - chaining methods ***************************");
+
+const charcter = {
+    name: "John",
+    level: 1,
+    xp: 0,
+
+    raiseXp: function (points) {
+        this.xp += points;
+
+        if (this.xp === 10) {
+            this.level++;
+            this.xp = 0;
+            // this.print('level');
+        }
+        return this;
+    },
+
+    print: function (mode) {
+        if (mode === 'all') {
+            console.log(this);
+        } else if (mode === 'level') {
+            console.log("Level Up:", this.level);
+        }
+        return this;
+    }
+};
+
+charcter.raiseXp(10).print('level').print('all');
+//charcter.print('all');
+
+// chaining array methods
+const arr = [1, 2, 3, 4, 5];
+const newarr = arr.filter((item) => item > 2).map((item) => item * 2);
