@@ -63,10 +63,9 @@ for (let key in car) {
 
 console.log("********************** Object - for-of ***************************");
 
-for (let props of Object.values(car)) {
-    console.log(props);
-}
-
 console.log(Object.keys(car));
 console.log(Object.values(car));
 
+for (let props of Object.values(car)) {
+    console.log(props);
+}
