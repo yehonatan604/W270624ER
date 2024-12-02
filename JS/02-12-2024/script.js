@@ -14,14 +14,14 @@ const car = {
         console.log("Car stopped");
     },
 
-    changeYear: (year) => {
+    changeYear: function (year) {
         this.year = year;
     },
 
-    changeModel: (model) => {
+    changeModel: function (model) {
+        console.log(this);
         this.model = model;
     }
-
 };
 
 console.log(typeof car);
@@ -36,9 +36,32 @@ console.log("********************** Object Methods ***************************")
 
 car.drive();
 car.stop();
-car.changeYear(2024);
-
-console.log(car);
 
 console.log("********************** Object - this ***************************");
 
+// when we use arrow function,
+// this will refer to the global object
+
+car.changeYear(2024);
+car.changeModel("Camry");
+
+console.log(car);
+
+console.log("********************** Object - loops ***************************");
+
+for (let key in car) {
+    console.log(key); // this will print all the keys
+}
+
+for (let key in car) {
+    console.log(car[key]);
+}
+
+console.log("********************** Object - for-of ***************************");
+
+for (let props of Object.values(car)) {
+    console.log(props);
+}
+
+console.log(Object.keys(car));
+console.log(Object.values(car));
