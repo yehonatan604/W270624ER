@@ -49,12 +49,16 @@ console.log(car);
 
 console.log("********************** Object - loops ***************************");
 
+// for (let key of car) {
+//     console.log(key); // this will throw an error
+// }
+
 for (let key in car) {
     console.log(key); // this will print all the keys
 }
 
 for (let key in car) {
-    console.log(car[key]);
+    console.log(car[key]); // this will print all the values
 }
 
 console.log("********************** Object - for-of ***************************");
@@ -65,3 +69,4 @@ for (let props of Object.values(car)) {
 
 console.log(Object.keys(car));
 console.log(Object.values(car));
+
