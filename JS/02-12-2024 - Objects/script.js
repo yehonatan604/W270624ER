@@ -100,6 +100,11 @@ const charcter = {
 charcter.raiseXp(10).print('level').print('all');
 //charcter.print('all');
 
+console.log("*************************************************");
+
 // chaining array methods
 const arr = [1, 2, 3, 4, 5];
+
 const newarr = arr.filter((item) => item > 2).map((item) => item * 2);
+
+charcter.raiseXp(1);
