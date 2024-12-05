@@ -30,3 +30,7 @@ console.log("******************** querySelectorAll *************************");
 // querySelectorAll will fetch all the elements
 const titlesOfContainers = document.querySelectorAll('.container > h1');
 console.log(titlesOfContainers);
+
+titlesOfContainers.forEach((title) => {
+    console.log(title);
+});
