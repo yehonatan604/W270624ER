@@ -39,8 +39,29 @@ const removeItemsFromList = () => {
 
     list.innerHTML = '';
     listItems.forEach((item) => {
-        if (item.innerText === "Yes" || item.innerText === "No") {
+        if (item.innerText === 'Yes') {
+            item.style.color = 'green';
+            list.appendChild(item);
+        } else if (item.innerText === 'No') {
+            item.style.color = 'red';
             list.appendChild(item);
         }
     });
 }
+
+console.log("**************  events  *******************");
+
+const printSelected = () => {
+    const select = document.getElementById('select');
+    console.log(select.value);
+}
+
+
+console.log("**************  eventListener  *******************");
+
+const circle = document.querySelector('.circle');
+
+circle.addEventListener('click', (event) => {
+    console.log(event);
+    event.target.style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)},${Math.ceil(Math.random() * 255)})`
+});

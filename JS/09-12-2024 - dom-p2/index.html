@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM2</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <select id="select">
+    <select onchange="printSelected()" id="select">
       <option value="easy">Easy</option>
       <option value="medium">Medium</option>
       <option value="hard">Hard</option>
@@ -22,7 +23,7 @@
     <div id="box1">
       <p>Box 1</p>
     </div>
-    <button onclick="removeBox1()">Remove Box 1</button>
+    <button on onclick="removeBox1()">Remove Box 1</button>
 
     <div id="container2">
       <p>Container2</p>
@@ -38,5 +39,7 @@
     </ul>
 
     <button onclick="removeItemsFromList()">Remove Items</button>
+
+    <div class="circle"></div>
   </body>
 </html>
