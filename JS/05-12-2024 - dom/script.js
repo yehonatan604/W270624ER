@@ -87,4 +87,4 @@ article.setAttribute('class', 'article2'); // will not affect style because it i
 
 article.setAttribute('id', 'articleId');
 
-console.log(article);
+console.log(article.href);
