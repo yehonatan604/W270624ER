@@ -19,3 +19,28 @@ h2.innerText = 'I am a h2!!!';
 
 emptyDiv.appendChild(h2);
 document.body.appendChild(emptyDiv);
+
+console.log("**************  remove elements  *******************");
+
+const removeBox1 = () => {
+    const box1 = document.getElementById('box1');
+    document.body.removeChild(box1);
+}
+
+const removeContainer2 = () => {
+    document.body.removeChild(document.getElementById('container2'));
+}
+
+const removeItemsFromList = () => {
+    const list = document.getElementById('list');
+    const listItems = list.querySelectorAll('li');
+
+    console.log(listItems);
+
+    list.innerHTML = '';
+    listItems.forEach((item) => {
+        if (item.innerText === "Yes" || item.innerText === "No") {
+            list.appendChild(item);
+        }
+    });
+}
