@@ -15,9 +15,9 @@ console.log("arr2", arr2);
 
 console.log(...arr2); // 200 2 3 4 5 6 7 8 9 10
 
-console.log("******************** Rsest Parameter *************************");
+console.log("******************** Rest Parameter *************************");
 
-const sum = (operator, ...items) => {
+const printSum = (operator, ...items) => {
     let sum = 0;
     for (const arg of items) {
         if (operator === "+") {
@@ -28,4 +28,5 @@ const sum = (operator, ...items) => {
     }
     console.log("Sum", sum);
 }
-sum("+", 100, 469, 250);
+printSum("+", 100, 469, 250);
+
