@@ -64,12 +64,33 @@ console.log("******************** try-catch *************************");
 
 const num = 0;
 
+let msg = "";
+
 try {
     num = 5;
     console.log("num", num);
+    msg = "success!!!";
 } catch (error) {
     console.log("there was an error", error);
+    msg = "error!!!";
 } finally {
-    console.log("finally block");
+    console.log(msg);
     console.log(num + 1000);
+    msg = "";
 }
+
+console.log("******************** Throw *************************");
+
+const divide = (num1, num2) => {
+    try {
+        if (num2 === 0) {
+            throw new Error("Cannot divide by zero");
+        }
+        return num1 / num2;
+    } catch (err) {
+        return err.message;
+    }
+}
+
+console.log(divide(10, 0)); // Uncaught Error: Cannot divide by zero
+console.log(divide(10, 2)); // 5
