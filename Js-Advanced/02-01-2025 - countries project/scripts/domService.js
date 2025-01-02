@@ -1,4 +1,19 @@
 import { countries, reset, search } from "./countriesService.js";
+const cardsContainer = document.getElementById('cards');
+
+document.getElementById('search-input').addEventListener('input', (event) => {
+    console.log(event.target.value);
+    reset();
+    cardsContainer.innerHTML = '';
+
+    if (!event.target.value || event.target.value === '') {
+        createCards();
+    } else {
+        search(event.target.value);
+        createCards();
+    }
+
+});
 
 const generateCard = (country) => {
     // create a card & style it
@@ -51,7 +66,6 @@ const generateCard = (country) => {
     card.appendChild(cardFooter);
 
     // get the cards container and append the card
-    const cardsContainer = document.getElementById('cards');
     cardsContainer.appendChild(card);
 }
 
