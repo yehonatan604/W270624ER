@@ -8,7 +8,18 @@ const getCountries = async () => {
 };
 
 const countriesFull = await getCountries();
-
 let countries = [...countriesFull];
 
-export { countries };
+const reset = () => {
+    countries = [...countriesFull];
+}
+
+const search = (word) => {
+    countries = countriesFull.filter((country) => {
+        const name = country.name.common.toLowerCase();
+        const formatedWord = word.toLowerCase();
+        return name.includes(formatedWord);
+    })
+}
+
+export { countries, reset, search };
