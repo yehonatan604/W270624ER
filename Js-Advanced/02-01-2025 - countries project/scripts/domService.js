@@ -52,6 +52,19 @@ const generateCard = (country) => {
     let heartIcon = document.createElement('i');
     heartIcon.className = "fa fa-heart text-dark";
 
+    heartIcon.addEventListener('click', () => {
+        heartIcon.classList.toggle('text-danger');
+        heartIcon.classList.toggle('text-dark');
+
+        // if(heartIcon.classList.contains('text-dark')){
+        //     heartIcon.classList.remove('text-dark');
+        //     heartIcon.classList.add('text-danger');
+        // } else {
+        //     heartIcon.classList.remove('text-danger');
+        //     heartIcon.classList.add('text-dark');
+        // }
+    });
+
     // add the heart icon to the card footer
     cardFooter.appendChild(heartIcon);
 
