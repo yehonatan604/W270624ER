@@ -1,1 +1,1 @@
-import { registerForm } from "./domService.js";
+import { registerForm, loginForm } from "./domService.js";
