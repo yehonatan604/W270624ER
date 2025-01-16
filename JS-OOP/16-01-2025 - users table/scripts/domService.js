@@ -1,4 +1,4 @@
-import { User } from './user.js';
+import { User } from './User.js';
 
 const drawTableRows = (users) => {
     const tableBody = document.querySelector('#users-table-body');
