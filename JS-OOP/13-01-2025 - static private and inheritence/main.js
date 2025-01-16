@@ -37,32 +37,43 @@ const bob = new Person('Bob', 'Smith', 40, 'bob@email.com');
 const alice = new Person('Alice', 'Johnson', 26, 'alice@email.com');
 const alice2 = new Person('Alice', 'Johnson', 30, 'alice@email.com');
 
-console.log(alice2);
-alice2.changeName('Rut', 'Levi');
-console.log(alice2);
-
-console.log("*****************************************");
-
-console.log(moshe);
-console.log(bob);
-console.log(alice);
-
-Person.getPersonCount();
 Person.getPeople();
+// console.log(alice2);
+// alice2.changeName('Rut', 'Levi');
+// console.log(alice2);
 
-console.log("*****************************************");
+// console.log("*****************************************");
 
-// bob.#age = 50;
-// bob.age = 50;
+// console.log(moshe);
+// console.log(bob);
+// console.log(alice);
 
+// Person.getPersonCount();
+// Person.getPeople();
 
-const moe = {
-    firstName: 'Moe',
-    lastName: 'Doe',
-    email: 'moe@email.com'
+// console.log("*****************************************");
+
+// // bob.#age = 50;
+// // bob.age = 50;
+
+// const moe = {
+//     firstName: 'Moe',
+//     lastName: 'Doe',
+//     email: 'moe@email.com'
+// }
+
+// console.log(moe);
+// moe.age = 25;
+// console.log(moe);
+
+class User extends Person {
+    password;
+
+    constructor(firstName, lastName, age, email, password) {
+        super(firstName, lastName, age, email);
+        this.password = password;
+    }
 }
 
-console.log(moe);
-moe.age = 25;
-console.log(moe);
-
+const user = new User('User', 'Name', 30, 'user@email.com', "1234");
+console.log(user);
