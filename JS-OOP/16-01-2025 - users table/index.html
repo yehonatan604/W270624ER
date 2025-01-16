@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Users Mangement</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./scripts/index.js" type="module" defer></script>
   </head>
   <body dir="rtl">
     <div class="container-register">
@@ -26,7 +27,7 @@
           <label for="register-password">סיסמא</label>
           <input type="password" name="password" id="register-password" />
         </div>
-        <button type="submit">הרשם</button>
+        <input type="submit">הרשם</>
       </form>
     </div>
 
@@ -43,6 +44,25 @@
         </div>
         <button type="submit">התחבר</button>
       </form>
+    </div>
+
+    <div class="container-users">
+      <h1>משתמשים</h1>
+
+      <table id="users-table">
+        <thead>
+          <tr>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>אימייל</th>
+            <th>סיסמא</th>
+            <th>פעולות</th>
+          </tr>
+        </thead>
+        <tbody id="users-table-body">
+          <!-- content from js -->
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
