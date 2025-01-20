@@ -4,8 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arrays</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #191818;
+        color: azure;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        padding-top: 3rem;
+        height: 100vh;
+      }
+
+      .box {
+        width: 40%;
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 3px 6px 12px azure;
+      }
+    </style>
   </head>
-  <body>
+  <body dir="rtl">
+    <div class="container">
+      <div class="box">
+        <h2>1. מציאת ערך מינימלי ומקסימלי</h2>
+        <p>מצא את הערך המינימלי והמקסימלי במערך הבא:</p>
+        <p>[45, 23, 78, 12, 89, 34, 56, 90, 11, 67]</p>
+
+        <h2>2. מציאת ערך במערך</h2>
+        <p>מצא את הערך 34 במערך המספרים</p>
+
+        <h2>3. מציאת אובייקט במערך</h2>
+        <p>מצא את האובייקט של בעל החיים "חתול" במערך הבא:</p>
+        <pre>
+        { animal: "כלב", age: 5 },
+        { animal: "חתול", age: 3 },
+        { animal: "ציפור", age: 2 },
+        { animal: "ארנב", age: 1 },
+    </pre
+        >
+
+        <h2>4. מיון מערך</h2>
+        <p>מיין את מערך בעלי החיים לפי הגילאים בסדר יורד</p>
+      </div>
+      <div class="box">
+        <h2>5. תרגיל מסכם</h2>
+        <p>לפניכם נתון מערך אשר מכיל אובייקטים של תלמידים וציונים:</p>
+        <pre>
+          { name: "דניאל", grade: 90 },
+          { name: "אביב", grade: 85 },
+          { name: "אורי", grade: 70 },
+          { name: "אורן", grade: 95 },
+          { name: "אורלי", grade: 60 },
+      </pre
+        >
+        <ul>
+          <li>חלקו את המערך לשני מערכים - נכשלים ועוברים</li>
+          <li>נכשלים - תלמידים שציונם נמוך מ-70 (כולל)</li>
+          <li>עוברים - תלמידים שציונם גבוה מ-70</li>
+          <li>מיינו את המערכים לפי הציונים בסדר עולה</li>
+          <li>הדפיסו את שם התלמידים בעלי הציון הגבוהה ביותר בכל אחד מהמערכים</li>
+          <li>הדפיסו את שם התלמיד בעל הציון הגבוהה ביותר בכיתה</li>
+          <li>היפכו את שם התלמיד כך ששמו יופיע הפוך, למשל: דני - ינד</li>
+        </ul>
+      </div>
+    </div>
+
     <script>
       const numbers = [150, 20, 300, 54, 556, 61, 7, 80, 159, 1];
       // find min and max value
