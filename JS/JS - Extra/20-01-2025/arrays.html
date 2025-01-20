@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [150, 20, 300, 54, 556, 61, 7, 80, 159, 1];
+      // find min and max value
+      const min = Math.min(...numbers);
+      const max = Math.max(...numbers);
+
+      console.log(`Min value: ${min}`);
+      console.log(`Max value: ${max}`);
+
+      const max2 = numbers.reduce((acc, curr) => {
+        return Math.max(acc, curr);
+      }, 0);
+
+      const min2 = numbers.reduce((acc, curr) => {
+        return Math.min(acc, curr);
+      });
+
+      console.log(`Max value: ${max2}`);
+      console.log(`Min value: ${min2}`);
+
+      // find value in array
+      const find61 = numbers.find((val, index) => {
+        return val === 61;
+      });
+
+      console.log(`Find 61: ${find61}`);
+
+      const cars = [
+        { brand: "Toyota", model: "Corolla", year: 2025 },
+        { brand: "Toyota", model: "Camry", year: 2018 },
+        { brand: "Toyota", model: "Yaris", year: 2019 },
+        { brand: "Toyota", model: "Avalon", year: 2017 },
+      ];
+
+      const camry = cars.find((car) => {
+        return car.year === 2018;
+      });
+
+      console.log(camry);
+
+      // find index of value
+      const camryIndex = cars.findIndex((car) => {
+        return car.year === 2018;
+      });
+
+      console.log(camryIndex);
+
+      // sort array
+      numbers.sort(); // sort by default(ascending order)
+
+      console.log(numbers);
+
+      cars.sort((a, b) => {
+        return a.year - b.year; // sort by year
+        //return a.model > b.model ? 1 : -1; // sort by model name
+      });
+
+      console.log(cars);
+
+      // reverse array
+      numbers.reverse();
+      console.log(numbers);
+    </script>
+  </body>
+</html>

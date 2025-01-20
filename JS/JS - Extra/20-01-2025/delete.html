@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: "John",
+        age: 30,
+        city: "New York",
+      };
+
+      // this is wrong way to do it
+      // const newPerson = {
+      //     name: person.name,
+      //     city: person.city
+      // }
+
+      //Object.assign({}, person); // this is like spread operator
+      const newPerson = { ...person };
+      delete newPerson.age;
+      console.log(newPerson);
+
+      // delete a variable
+      let x = 10;
+      delete x; // this will not delete the variable
+      console.log(x);
+
+      x = null; // this will delete the variable
+      console.log(x);
+    </script>
+  </body>
+</html>
