@@ -12,20 +12,20 @@
     <form action="" id="form">
       <div class="form-control">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" />
-        <p id="username-helper"></p>
+        <input class="error" type="text" id="username" name="username" />
+        <p id="username-helper">* this field is required</p>
       </div>
       <div class="form-control">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" />
-        <p id="email-helper"></p>
+        <input class="error" type="email" id="email" name="email" />
+        <p id="email-helper">* this field is required</p>
       </div>
       <div class="form-control">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" />
+        <input class="error" type="password" id="password" name="password" />
+        <p id="password-helper">* this field is required</p>
       </div>
-      <input type="submit" />
+      <input type="submit" id="submit-btn" disabled />
     </form>
-    <div id="output"></div>
   </body>
 </html>
