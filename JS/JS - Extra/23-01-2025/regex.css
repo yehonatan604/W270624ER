@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.error {
+  border-color: red;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  width: 20%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}

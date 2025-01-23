@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regular Expressions</title>
-    <script src="./regex.js"></script>
+    <script src="./regex.js" defer></script>
+    <link rel="stylesheet" href="./regex.css" />
   </head>
   <body>
     <h1>Regular Expressions</h1>
@@ -12,10 +13,12 @@
       <div class="form-control">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" />
+        <p id="username-helper"></p>
       </div>
       <div class="form-control">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" />
+        <p id="email-helper"></p>
       </div>
       <div class="form-control">
         <label for="password">Password</label>
