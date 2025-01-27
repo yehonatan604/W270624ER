@@ -36,6 +36,44 @@
         const rest = animal.slice(1); //og
         console.log(i + 1 + "." + firstLetter + rest);
       });
+
+      // return
+      const add = (a, b) => {
+        return a + b;
+      };
+
+      const total = add(5, 6);
+      console.log(total);
+
+      // ternary operator
+      console.log(total > 10 ? "Greater than 10" : "Less than 10"); // Greater than 10
+      console.log(window);
+
+      // rest parameter
+
+      const addAll = (...numbers) => {
+        let total = 0;
+        for (const number of numbers) {
+          total += number;
+        }
+        return total;
+      };
+
+      const all = addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+      console.log(all); // 55
+
+      const eleven = addAll(5, 6);
+      console.log(eleven); // 11
+
+      // compare two strings/numbers
+      console.log(10 == "10"); // true
+      console.log(10 === "10"); // false
+
+      // nullish coalescing operator
+      const v = "hello";
+      let vir = "";
+      console.log(v ?? "blabla"); // hello
+      console.log(vir ?? "blabla"); // blabla
     </script>
   </body>
 </html>
