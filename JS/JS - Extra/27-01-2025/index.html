@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const animals = ["dog", "cat", "lion", "tiger", "elephant"];
+
+      // for loop
+      for (let i = 0; i < animals.length; i++) {
+        const firstLetter = animals[i][0].toUpperCase(); // D
+        const rest = animals[i].slice(1); //og
+        console.log(i + 1 + "." + firstLetter + rest);
+      }
+
+      // for-of
+      for (const animal of animals) {
+        const firstLetter = animal[0].toUpperCase(); // D
+        const rest = animal.slice(1); //og
+        console.log(firstLetter + rest);
+      }
+
+      // for-in
+      for (const index in animals) {
+        const firstLetter = animals[index][0].toUpperCase(); // D
+        const rest = animals[index].slice(1); //og
+        console.log(+index + 1 + "." + firstLetter + rest);
+      }
+
+      // forEach
+      animals.forEach((animal, i) => {
+        const firstLetter = animal[0].toUpperCase(); // D
+        const rest = animal.slice(1); //og
+        console.log(i + 1 + "." + firstLetter + rest);
+      });
+    </script>
+  </body>
+</html>
