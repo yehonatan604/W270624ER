@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: calc(50% - 100px);
+        top: calc(50% - 100px);
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        border: 1px solid black;
+        background-color: white;
+      }
+
+      .modal-on {
+        background-color: rgba(0, 0, 0, 0.251);
+      }
+    </style>
   </head>
   <body>
     <form>
@@ -12,23 +30,38 @@
       <input type="number" id="age" placeholder="Age" />
       <button type="submit" id="submit">Submit</button>
     </form>
+
+    <div class="modal">
+      <div class="modal-content">
+        <p class="modal-text">rtyrt</p>
+        <button id="close">Close</button>
+      </div>
+    </div>
+
     <script>
       class Person {
         name;
         age;
-        static names = [];
+        static names = JSON.parse(localStorage.getItem("names")) || [];
+        static people = JSON.parse(localStorage.getItem("people")) || [];
+
         constructor(name, age) {
           if (!Person.names.includes(name)) {
             this.name = name;
             Person.names.push(name);
             this.age = age;
+            Person.people.push(this);
+            localStorage.setItem("people", JSON.stringify(Person.people));
             document.getElementById("name-error").textContent = "";
+            document.querySelector(".modal").style.display = "block";
+            document.querySelector(
+              ".modal-text"
+            ).textContent = `Name: ${this.name}, Age: ${this.age} was added.`;
+            document.body.classList.toggle("modal-on");
+            localStorage.setItem("names", JSON.stringify(Person.names));
           } else {
             document.getElementById("name-error").textContent = "Name already exists.";
           }
-        }
-        greet() {
-          console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
         }
       }
 
@@ -37,6 +70,11 @@
         const name = document.getElementById("name").value;
         const age = document.getElementById("age").value;
         new Person(name, age);
+      });
+
+      document.getElementById("close").addEventListener("click", () => {
+        document.querySelector(".modal").style.display = "none";
+        document.body.classList.toggle("modal-on");
       });
     </script>
   </body>
