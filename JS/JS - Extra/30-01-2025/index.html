@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="name" placeholder="Name" />
+      <p id="name-error"></p>
+      <input type="number" id="age" placeholder="Age" />
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <script>
+      class Person {
+        name;
+        age;
+        static names = [];
+        constructor(name, age) {
+          if (!Person.names.includes(name)) {
+            this.name = name;
+            Person.names.push(name);
+            this.age = age;
+            document.getElementById("name-error").textContent = "";
+          } else {
+            document.getElementById("name-error").textContent = "Name already exists.";
+          }
+        }
+        greet() {
+          console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+        }
+      }
+
+      document.getElementById("submit").addEventListener("click", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        new Person(name, age);
+      });
+    </script>
+  </body>
+</html>
