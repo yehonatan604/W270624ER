@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ts & Vite</title>
+  </head>
+  <body>
+    <script>
+      // why do we need typescript?
+      // 1. Static Typing
+
+      let x = 10;
+      x = "hello";
+
+      console.log((x * 850) / 2); // NaN
+
+      // 2. Functions
+      const multi = (a, b) => {
+        return a * b;
+      };
+
+      console.log(multi(10, 20)); // 200
+
+      console.log(multi("hello", "world")); // NaN
+      console.log(multi("hello", 5)); // NaN
+      console.log(multi()); // NaN
+
+      // 3. Object
+      const person = {
+        name: "John",
+        age: 30,
+      };
+
+      const sayHello = (person) => {
+        console.log(`Hello ${person.name}, you are ${person.age} years old`);
+      };
+
+      sayHello(person); // Hello John, you are 30 years old
+      sayHello("moshe"); // Hello undefined, you are undefined years old
+      // sayHello(); // error
+    </script>
+  </body>
+</html>
