@@ -22,3 +22,4 @@ class Person {
 
 new Person('Ortal', 28);
 new Person('Snir', 32);
+
