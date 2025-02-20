@@ -60,3 +60,14 @@ a = {
 }
 
 console.log((a as Person).name);
+
+
+// HomeWork
+let hello: unknown = "hello";
+let helloString = (hello as string).toUpperCase();
+console.log(typeof helloString, helloString);
+
+let myArr: unknown = [];
+myArr = helloString.split("");
+let myArr2 = myArr as string[];
+console.log(typeof myArr2, myArr2);
