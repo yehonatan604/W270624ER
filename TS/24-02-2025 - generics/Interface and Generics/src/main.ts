@@ -32,9 +32,10 @@ interface ICat {
 console.log(bela);
 
 class Animal implements IAnimal {
-  name: string = "";
-  age: number = 0;
-  weight: number = 0;
+  name: string;
+  age: number;
+  weight: number;
+
   constructor(name: string, age: number, weight: number) {
     this.name = name;
     this.age = age;
@@ -61,7 +62,57 @@ class Cat implements IAnimal, ICat {
     this.eyesColor = eyesColor;
     this.sound = sound;
   }
+
+  makeSound() {
+    console.log(this.sound);
+  }
 }
 
 const cat = new Cat("Tom", 2, 0.5, "green", "meow");
 console.log(cat);
+
+document.body.innerHTML = `<div>${cat.name}</div>`;
+
+console.log("\n*******************************Generics**********************************\n");
+
+const arr: string[] = ["a", "b", "c"];
+const arr2: Array<string> = ["a", "b", "c"];
+
+interface IList<T> {
+  items: T[];
+  addItem: (item: T) => number;
+}
+
+class List<T> implements IList<T> {
+  items: T[] = [];
+
+  addItem = (item: T) => {
+    this.items.push(item);
+    return this.items.length - 1;
+  }
+
+  show = () => {
+    console.log(...this.items);
+  }
+
+  constructor(items: T[]) {
+    this.items = items;
+  }
+}
+
+const numbers = new List<number>([1, 2, 3]);
+numbers.addItem(876.5);
+numbers.show();
+
+const strings = new List<string | number>(["a", "b", "c", 6, 8, 9]);
+strings.addItem("z");
+strings.addItem(10);
+strings.show();
+
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+}
+
+console.log(Direction.Up);
+// Direction.Up = "ytrytr";
