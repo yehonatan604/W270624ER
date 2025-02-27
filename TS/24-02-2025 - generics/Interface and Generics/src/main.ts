@@ -116,3 +116,4 @@ enum Direction {
 
 console.log(Direction.Up);
 // Direction.Up = "ytrytr";
+
