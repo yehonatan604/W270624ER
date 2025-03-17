@@ -8,6 +8,10 @@ const Son = (props: SonProps) => {
 
   const titleColor = age > 30 ? "red" : "skyblue";
 
+  //                                            max  min  min
+  const randomNum = Math.floor(Math.random() * (100 - 1) + 1); // Random number between 1 and 100
+  console.log(randomNum);
+
   return (
     <div>
       <h1 style={{ color: titleColor }}>{name}</h1>
