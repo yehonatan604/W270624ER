@@ -1,5 +1,6 @@
 import Father from "./components/Father";
 import RandomNum from "./components/RandomNum";
+import Users from "./components/Users";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <RandomNum min={20} max={30} />
       <RandomNum min={11} max={45} />
       <RandomNum min={90} max={200} />
+      <Users />
     </>
   );
 }
