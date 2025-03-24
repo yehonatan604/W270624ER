@@ -13,6 +13,7 @@ function App() {
       <DarkThemeToggle />
       <Button gradientDuoTone="greenToBlue">Green to Blue</Button>
       <GiAxeInStump className="text-4xl text-red-500" />
+
       {paragarphes.map((par, i) => {
         return (
           <div
