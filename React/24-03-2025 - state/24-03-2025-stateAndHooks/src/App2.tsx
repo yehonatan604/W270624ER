@@ -21,7 +21,7 @@ const App2 = () => {
         // ["name", "age", "email", "country", "city", "address", "phone"]
         return (
           <h1 key={index}>
-            {index}: {person[item as keyof typeof person]}
+            {item}: {person[item as keyof typeof person]}
           </h1>
         );
       })}
