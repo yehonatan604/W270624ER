@@ -22,6 +22,8 @@ function App() {
       >
         reset
       </Button>
+      <hr className="w-1/2 border-t-2 border-sky-500 dark:border-slate-500" />
+
       <h1 style={{ color: nameColor }}>{name}</h1>
       <Button
         onClick={() => {
