@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function App() {
   //let count = 0;
-  const [count, updateCount] = useState(0);
+  const [count, updateCount] = useState<number>(0);
   const [name, updateName] = useState("John Doe");
   const [nameColor, updateNameColor] = useState("blue");
 
@@ -17,7 +17,7 @@ function App() {
       <Button onClick={increase}>+</Button>
       <Button
         onClick={() => {
-          updateCount(count + 1);
+          updateCount(0);
         }}
       >
         reset
