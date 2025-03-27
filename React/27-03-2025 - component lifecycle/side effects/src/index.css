@@ -3,3 +3,7 @@
 @source "../.flowbite-react/class-list.json";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-slate-800 text-white;
+}

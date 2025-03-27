@@ -10,7 +10,7 @@ const Now = () => {
     console.log("Now component rendered");
   }, []);
 
-  console.log("***************");
+  //console.log("***************");
 
   return <>{currentDate}</>;
 };

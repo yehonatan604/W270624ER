@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Now from "./components/Now";
+import RandomNum from "./components/RandomNum";
 
 const App = () => {
   // This effect will run only once after the component is rendered
@@ -9,11 +10,8 @@ const App = () => {
 
   return (
     <div>
-      <h1>Side Effects</h1>
-      <p>
-        This example demonstrates how to use side effects in React components.
-      </p>
       <Now />
+      <RandomNum />
     </div>
   );
 };
