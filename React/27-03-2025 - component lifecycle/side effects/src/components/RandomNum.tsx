@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const RandomNum = () => {
   const [num, setNum] = useState<number>(0);
-  const [numColor, setNumColor] = useState<string>("green");
+  const [numColor, setNumColor] = useState<"green" | "red">("green");
 
   const randomize = () => {
     setNum(Math.floor(Math.random() * 100) + 1);
