@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Tcountry } from "./types/TCountry";
+import { Card } from "flowbite-react";
 
 const App = () => {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<Tcountry[]>([]);
 
   const getCountries = async () => {
     try {
@@ -22,9 +24,24 @@ const App = () => {
   }, [countries]);
 
   return (
-    <div className="App">
-      <h1>Axios Calls with Toastify</h1>
-      <p>This is a simple example of using Axios with Toastify in React.</p>
+    <div className="flex flex-wrap items-center justify-center gap-4">
+      {countries.map((country) => (
+        <Card
+          className="max-w-sm"
+          imgSrc={country.flags.png}
+          key={country.cca3}
+        >
+          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {country.name.common}
+          </h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            Capital: {country.capital}
+          </p>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            Region: {country.region}
+          </p>
+        </Card>
+      ))}
     </div>
   );
 };
