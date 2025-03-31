@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Tcountry } from "./types/TCountry";
-import { Card } from "flowbite-react";
+import { Button, Card } from "flowbite-react";
+import { toast } from "react-toastify";
 
 const App = () => {
   const [countries, setCountries] = useState<Tcountry[]>([]);
@@ -15,8 +16,26 @@ const App = () => {
     }
   };
 
+  const login = async () => {
+    try {
+      const response = await axios.post(
+        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login",
+        {
+          email: "admin@gmail.com",
+          password: "Abc!123Abc",
+        },
+      );
+      console.log("Login successful:", response.data);
+    } catch (error) {
+      console.log("Error logging in:", error);
+    }
+  };
+
   useEffect(() => {
     getCountries();
+    toast("Welcome to the app!");
+    toast.success("Success!!!!");
+    toast.error("Error!!!!");
   }, []);
 
   useEffect(() => {
@@ -24,25 +43,26 @@ const App = () => {
   }, [countries]);
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-4">
-      {countries.map((country) => (
-        <Card
-          className="max-w-sm"
-          imgSrc={country.flags.png}
-          key={country.cca3}
-        >
-          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {country.name.common}
-          </h5>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            Capital: {country.capital}
-          </p>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            Region: {country.region}
-          </p>
-        </Card>
-      ))}
-    </div>
+    <>
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        <Button onClick={login} className="mb-4">
+          Login
+        </Button>
+        {countries.map((country) => (
+          <Card className="max-w-sm" imgSrc={country.flags.png}>
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {country.name.common}
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Capital: {country.capital}
+            </p>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Region: {country.region}
+            </p>
+          </Card>
+        ))}
+      </div>
+    </>
   );
 };
 
