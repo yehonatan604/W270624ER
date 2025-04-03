@@ -5,6 +5,8 @@ import { useState } from "react";
 const App = () => {
   const [users, setUsers] = useState([]);
 
+  console.log("Users:", users);
+
   const getAllUsers = async () => {
     try {
       const token = localStorage.getItem("token");
