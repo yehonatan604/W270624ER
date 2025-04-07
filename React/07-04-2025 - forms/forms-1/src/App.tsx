@@ -1,4 +1,5 @@
-import { Button, FloatingLabel } from "flowbite-react";
+import { Button, FloatingLabel, HelperText } from "flowbite-react";
+
 import { ChangeEvent, useState } from "react";
 
 export default function App() {
@@ -6,6 +7,11 @@ export default function App() {
     email: "",
     password: "",
   });
+  const [formErrors, setFormErrors] = useState({
+    email: "",
+    password: "",
+  });
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const onSubmit = () => {
     console.log(formData);
@@ -16,6 +22,27 @@ export default function App() {
       ...formData,
       [e.target.id]: e.target.value,
     });
+    isFormValid();
+  };
+
+  const isFormValid = () => {
+    const errors = {
+      email: "",
+      password: "",
+    };
+
+    if (!formData.email.includes("@")) {
+      errors.email = "Email is invalid";
+    }
+
+    if (formData.password.length < 6) {
+      errors.password = "Password must be at least 6 characters";
+    }
+
+    setFormErrors(errors);
+    const isAllFieldsValid =
+      formErrors.email === "" && formErrors.password === "";
+    setIsDisabled(!isAllFieldsValid);
   };
 
   return (
@@ -27,7 +54,11 @@ export default function App() {
           label="email"
           id="email"
           onInput={onChanges}
+          color={formErrors.email === "" ? "default" : "error"}
         />
+        <HelperText className="text-left" color="failure">
+          {formErrors.email}
+        </HelperText>
 
         <FloatingLabel
           variant="standard"
@@ -35,9 +66,13 @@ export default function App() {
           id="password"
           type="password"
           onInput={onChanges}
+          color={formErrors.password === "" ? "default" : "error"}
         />
+        <HelperText className="text-left" color="failure">
+          {formErrors.password}
+        </HelperText>
 
-        <Button disabled onClick={onSubmit}>
+        <Button disabled={isDisabled} onClick={onSubmit}>
           Submit
         </Button>
       </form>
