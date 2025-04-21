@@ -40,6 +40,7 @@ export default function App() {
     }
 
     setFormErrors(errors);
+
     const isAllFieldsValid =
       formErrors.email === "" && formErrors.password === "";
     setIsDisabled(!isAllFieldsValid);
