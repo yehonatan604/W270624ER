@@ -2,6 +2,7 @@ import { joiResolver } from "@hookform/resolvers/joi";
 import { Button, FloatingLabel } from "flowbite-react";
 import { useForm } from "react-hook-form";
 import { loginSchema } from "./validations/login.joi";
+import axios from "axios";
 
 type FormData = {
   email: string;
@@ -22,8 +23,17 @@ export default function App() {
     resolver: joiResolver(loginSchema),
   });
 
-  const submitForm = (data: FormData) => {
+  const submitForm = async (data: FormData) => {
     console.log("Form submitted", data);
+    try {
+      await axios.post(
+        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login",
+        data,
+      );
+      console.log("Success");
+    } catch (error) {
+      console.error("Error submitting form", error);
+    }
   };
 
   return (
