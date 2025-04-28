@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header isLoggedIn={isLoggedIn} setIsloggedIN={setIsLoggedIn} />
       <Routes>
         <Route path="/*" element={<Home />} />
         <Route

@@ -1,7 +1,12 @@
 import { Navbar } from "flowbite-react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+type HeaderProps = {
+  isLoggedIn: boolean;
+  setIsloggedIN: (isLoggedIn: boolean) => void;
+};
+
+const Header = (props: HeaderProps) => {
   return (
     <Navbar fluid rounded className="bg-slate-800">
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
@@ -22,10 +27,15 @@ const Header = () => {
         >
           Sign In
         </Navbar.Link>
-        <Navbar.Link className="cursor-pointer text-white">
+
+        <Navbar.Link
+          className="cursor-pointer text-white"
+          onClick={() => props.setIsloggedIN(false)}
+        >
           Sign Out
         </Navbar.Link>
-        {isLoggedIn && (
+
+        {props.isLoggedIn && (
           <Navbar.Link
             as={Link}
             to={"/profile"}
