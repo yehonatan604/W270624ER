@@ -4,12 +4,15 @@ import { useForm } from "react-hook-form";
 import { SignInJoiSchema } from "../../validations/SigninSchema.joi";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { userActions } from "../../store/userSlice";
 
-type SignInProps = {
-  setIsloggedIN: (isLoggedIn: boolean) => void;
-};
+// type SignInProps = {
+//   setIsloggedIN: (isLoggedIn: boolean) => void;
+// };
 
-function SignIn(props: SignInProps) {
+function SignIn() {
+  const dispatch = useDispatch();
   const initialFormData = {
     email: "",
     password: "",
@@ -31,9 +34,23 @@ function SignIn(props: SignInProps) {
         "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login",
         form,
       );
-      console.log(token);
+      console.log(token.data);
       toast.success("Sign In Successful");
-      props.setIsloggedIN(true);
+
+      // parser token with atob
+      const parsedToken = JSON.parse(atob(token.data.split(".")[1]));
+
+      // get user data from token & set it in headers
+      axios.defaults.headers.common["x-auth-token"] = token.data;
+
+      // get user data from api
+      const res = await axios.get(
+        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/" +
+          parsedToken._id,
+      );
+
+      // update user data in redux store
+      dispatch(userActions.login(res.data));
     } catch (error) {
       console.log(error);
       toast.error("Sign In Failed");

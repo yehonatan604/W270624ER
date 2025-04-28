@@ -9,6 +9,5 @@ const store = configureStore({
 })
 
 const RootReducer = combineReducers({ userSlice });
-export type RootState = ReturnType<typeof RootReducer>; // this is the type of the root state of the redux store
-
+export type TRootState = ReturnType<typeof RootReducer>; // this is the type of the root state of the redux store
 export default store; // this is the store of the redux

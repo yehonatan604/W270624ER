@@ -22,7 +22,7 @@ const userSlice = createSlice({
     initialState,
     reducers: { // Actions to update the state
         login: (state, data) => {
-            state.user = data.payload.user;
+            state.user = data.payload;
         },
         logout: (state) => {
             state.user = null;
@@ -32,4 +32,4 @@ const userSlice = createSlice({
 
 //export type TUserSliceState = typeof initialState; if we want to go type safety
 export const userActions = userSlice.actions; // this will give us the actions of the slice
-export default userSlice.reducer; // this will give us the slice reducer
+export default userSlice.reducer; // this will give us the whoale slice reducer

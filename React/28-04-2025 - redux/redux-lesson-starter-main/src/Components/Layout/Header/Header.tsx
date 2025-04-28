@@ -1,12 +1,18 @@
 import { Navbar } from "flowbite-react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { userActions } from "../../../store/userSlice";
+import { TRootState } from "../../../store/store";
 
-type HeaderProps = {
-  isLoggedIn: boolean;
-  setIsloggedIN: (isLoggedIn: boolean) => void;
-};
+// type HeaderProps = {
+//   isLoggedIn: boolean;
+//   setIsloggedIN: (isLoggedIn: boolean) => void;
+// };
 
-const Header = (props: HeaderProps) => {
+const Header = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state: TRootState) => state.userSlice.user);
+
   return (
     <Navbar fluid rounded className="bg-slate-800">
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
@@ -30,12 +36,12 @@ const Header = (props: HeaderProps) => {
 
         <Navbar.Link
           className="cursor-pointer text-white"
-          onClick={() => props.setIsloggedIN(false)}
+          onClick={() => dispatch(userActions.logout())}
         >
           Sign Out
         </Navbar.Link>
 
-        {props.isLoggedIn && (
+        {user !== null && (
           <Navbar.Link
             as={Link}
             to={"/profile"}
