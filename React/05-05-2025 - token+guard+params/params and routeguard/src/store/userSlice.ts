@@ -8,7 +8,7 @@ type Tuser = {
         middle?: string;
         last: string;
     };
-    isBuissness: boolean;
+    isBusiness: boolean;
     isAdmin: boolean;
     email: string;
     phone: string;
