@@ -7,6 +7,17 @@ type Tuser = {
         first: string;
         middle?: string;
         last: string;
+    };
+    isBuissness: boolean;
+    isAdmin: boolean;
+    email: string;
+    phone: string;
+    address: {
+        city: string;
+        state: string;
+        country: string;
+        street: string;
+        zip?: string;
     }
 }
 
