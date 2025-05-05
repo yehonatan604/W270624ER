@@ -4,6 +4,8 @@ import Header from "./Components/Layout/Header/Header";
 import Footer from "./Components/Layout/Footer/Footer";
 import SignIn from "./Pages/SignIn/SignIn";
 import Profile from "./Pages/Profile/Profile";
+import RouteGuard from "./Components/RouteGuard";
+import CreateCard from "./Pages/CreateCard/CreateCard";
 
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -18,7 +20,24 @@ function App() {
           element={<SignIn setIsloggedIN={setIsLoggedIn} />}
         /> */}
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/profile" element={<Profile />} />
+
+        <Route
+          path="/profile"
+          element={
+            <RouteGuard>
+              <Profile />
+            </RouteGuard>
+          }
+        />
+
+        <Route
+          path="/create-card"
+          element={
+            <RouteGuard isBiz={true}>
+              <CreateCard />
+            </RouteGuard>
+          }
+        />
       </Routes>
       <Footer />
     </>

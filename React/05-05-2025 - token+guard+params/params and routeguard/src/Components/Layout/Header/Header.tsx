@@ -51,6 +51,17 @@ const Header = () => {
             Profile
           </Navbar.Link>
         )}
+
+        {user && user.isBusiness && (
+          <Navbar.Link
+            as={Link}
+            to={"/create-card"}
+            href="/create-card"
+            className="text-white"
+          >
+            Create Card
+          </Navbar.Link>
+        )}
       </Navbar.Collapse>
     </Navbar>
   );
