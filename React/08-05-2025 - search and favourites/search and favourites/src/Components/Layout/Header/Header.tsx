@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { userActions } from "../../../store/userSlice";
 import { TRootState } from "../../../store/store";
 import { IoSearchSharp } from "react-icons/io5";
+import { searchActions } from "../../../store/searchSlice";
 
 // type HeaderProps = {
 //   isLoggedIn: boolean;
@@ -23,7 +24,12 @@ const Header = () => {
       </Navbar.Brand>
 
       <Navbar.Brand>
-        <TextInput rightIcon={IoSearchSharp} />
+        <TextInput
+          rightIcon={IoSearchSharp}
+          onChange={(e) =>
+            dispatch(searchActions.setSearchWord(e.target.value))
+          }
+        />
       </Navbar.Brand>
 
       <Navbar.Toggle />

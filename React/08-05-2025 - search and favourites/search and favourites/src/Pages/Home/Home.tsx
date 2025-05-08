@@ -1,13 +1,27 @@
 import axios from "axios";
 import { Button, Card } from "flowbite-react";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { TRootState } from "../../store/store";
 
 const Home = () => {
   const [cards, setCards] = useState<
     { _id: string; title: string; subtitle: string }[]
   >([]);
   const nav = useNavigate();
+  const searchWord = useSelector(
+    (state: TRootState) => state.searchSlice.searchWord,
+  );
+
+  const filterBySearch = () => {
+    return cards.filter((card) => {
+      return (
+        card.title.toLowerCase().includes(searchWord.toLowerCase()) ||
+        card.subtitle.toLowerCase().includes(searchWord.toLowerCase())
+      );
+    });
+  };
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -30,7 +44,7 @@ const Home = () => {
       <p className="text-lg">Welcome Home!</p>
 
       {cards &&
-        cards.map((card) => (
+        filterBySearch().map((card) => (
           <Card key={card._id}>
             <h2>{card.title}</h2>
             <h1>{card.subtitle}</h1>
