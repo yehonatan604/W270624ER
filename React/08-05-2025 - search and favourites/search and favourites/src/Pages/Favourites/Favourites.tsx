@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Button, Card } from "flowbite-react";
+import { Button, Card, Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import { TRootState } from "../../store/store";
 import { Tcard } from "../../types/TCard";
 
 const Favourites = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [cards, setCards] = useState<
     { _id: string; title: string; subtitle: string }[]
   >([]);
@@ -28,6 +29,7 @@ const Favourites = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(
           "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards",
         );
@@ -38,6 +40,8 @@ const Favourites = () => {
         setCards(likedCards);
       } catch (error) {
         console.error("Error fetching cards:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -56,6 +60,10 @@ const Favourites = () => {
             <Button onClick={() => nav("/card/" + card._id)}>Click</Button>
           </Card>
         ))}
+
+      {loading && (
+        <Spinner color="purple" aria-label="Purple spinner example" />
+      )}
     </div>
   );
 };
