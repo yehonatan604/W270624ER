@@ -41,19 +41,13 @@ const Home = () => {
         let cardsArr = [...cards];
 
         if (isLiked) {
-          const card = cardsArr.find((card) => card._id === cardId);
-          if (card) {
-            card.likes = card?.likes.filter((like) => like !== user?._id + "");
-            const cardIndex = cardsArr.findIndex((card) => card._id === cardId);
-            cardsArr[cardIndex] = card;
-          }
+          card.likes = card?.likes.filter((like) => like !== user?._id + "");
+          const cardIndex = cardsArr.findIndex((card) => card._id === cardId);
+          cardsArr[cardIndex] = card;
           toast.success("Card unliked successfully");
         } else {
-          const card = cardsArr.find((card) => card._id === cardId);
-          if (card) {
-            card.likes = [...card.likes, user?._id + ""];
-            cardsArr = [...cardsArr, card];
-          }
+          card.likes = [...card.likes, user?._id + ""];
+          cardsArr = [...cardsArr, card];
           toast.success("Card liked successfully");
         }
 
