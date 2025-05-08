@@ -7,6 +7,7 @@ import Profile from "./Pages/Profile/Profile";
 import RouteGuard from "./Components/RouteGuard";
 import CreateCard from "./Pages/CreateCard/CreateCard";
 import CardDetails from "./Components/CardDetails";
+import Favourites from "./Pages/Favourites/Favourites";
 
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -29,6 +30,15 @@ function App() {
           element={
             <RouteGuard>
               <Profile />
+            </RouteGuard>
+          }
+        />
+
+        <Route
+          path="/favourites"
+          element={
+            <RouteGuard>
+              <Favourites />
             </RouteGuard>
           }
         />

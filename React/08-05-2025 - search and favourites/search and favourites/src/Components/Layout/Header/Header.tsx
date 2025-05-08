@@ -53,7 +53,7 @@ const Header = () => {
           Sign Out
         </Navbar.Link>
 
-        {user !== null && (
+        {user && (
           <Navbar.Link
             as={Link}
             to={"/profile"}
@@ -61,6 +61,17 @@ const Header = () => {
             className="text-white"
           >
             Profile
+          </Navbar.Link>
+        )}
+
+        {user && (
+          <Navbar.Link
+            as={Link}
+            to={"/favourites"}
+            href="/favourites"
+            className="text-white"
+          >
+            Favourites
           </Navbar.Link>
         )}
 
