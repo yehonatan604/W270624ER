@@ -39,7 +39,7 @@ const Home = () => {
 
       if (card) {
         const isLiked = card.likes.includes(user?._id + "");
-        let cardsArr = [...cards];
+        const cardsArr = [...cards];
 
         if (isLiked) {
           card.likes = card?.likes.filter((like) => like !== user?._id + "");
@@ -48,7 +48,8 @@ const Home = () => {
           toast.success("Card unliked successfully");
         } else {
           card.likes = [...card.likes, user?._id + ""];
-          cardsArr = [...cardsArr, card];
+          const cardIndex = cardsArr.findIndex((card) => card._id === cardId);
+          cardsArr[cardIndex] = card;
           toast.success("Card liked successfully");
         }
 

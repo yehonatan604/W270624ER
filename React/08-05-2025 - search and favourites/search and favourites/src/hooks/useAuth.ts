@@ -43,6 +43,7 @@ const useAuth = () => {
             toast.error("Sign In Failed");
         }
     };
+
     return { user, login }
 };
 
