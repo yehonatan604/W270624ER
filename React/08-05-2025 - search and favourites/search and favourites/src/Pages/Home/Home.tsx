@@ -7,6 +7,7 @@ import { TRootState } from "../../store/store";
 import { FaHeart } from "react-icons/fa";
 import { Tcard } from "../../types/TCard";
 import { toast } from "react-toastify";
+import useAuth from "../../hooks/useAuth";
 
 const Home = () => {
   const [cards, setCards] = useState<Tcard[]>([]);
@@ -14,7 +15,7 @@ const Home = () => {
   const searchWord = useSelector(
     (state: TRootState) => state.searchSlice.searchWord,
   );
-  const user = useSelector((state: TRootState) => state.userSlice.user);
+  const { user } = useAuth();
 
   const filterBySearch = () => {
     return cards.filter((card: Tcard) => {
