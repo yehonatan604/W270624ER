@@ -2,7 +2,7 @@ import { Button } from "flowbite-react";
 import useAge from "../hooks/useAge";
 
 const Son1 = () => {
-  const { age, changeAge } = useAge();
+  const { age, changeAge } = useAge(35);
 
   return (
     <div>

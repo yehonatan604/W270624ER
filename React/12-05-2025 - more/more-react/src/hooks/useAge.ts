@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useAge = () => {
-    const [age, setAge] = useState(25);
+const useAge = (defaultAge: number) => {
+    const [age, setAge] = useState(defaultAge);
 
     const changeAge = (type: "+" | "-") => {
         if (type === "+") {
